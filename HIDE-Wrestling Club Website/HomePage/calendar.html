@@ -1,11 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      margin: 0;
+    }
+
+    .wrapper {
+      max-width: 1100px;
+      margin: 15px auto;
+    }
+
+    /* Calendar container */
+    .container-calendar {
+      background: #ffffff;
+      padding: 15px;
+      max-width: 900px;
+      margin: 0 auto;
+      overflow: auto;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .calendar-background {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .container-calendar #left h1 {
+      color: #ffcd00;
+      text-align: center;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 10px 0;
+    }
+
+    /* Calendar table */
+    .table-calendar {
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      width: 95%;
+    }
+
+    .table-calendar td,
+    .table-calendar th {
+      padding: 5px;
+      border: 1px solid #e2e2e2;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    /* Date picker */
+    .date-picker.selected {
+      background-color: #ffcd00;
+      font-weight: bold;
+      outline: 1px dashed #ffcd00;
+    }
+
+    .date-picker.selected span {
+      border-bottom: 2px solid currentColor;
+    }
+
+    /* Hover effect for date cells */
+    .date-picker:hover {
+      background-color: #ffcd00;
+      color: #000;
+      cursor: pointer;
+    }
+
+    /* Header for month and year */
+    #monthAndYear {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    /* Reminder section styling */
+    #reminder-section {
+      padding: 10px;
+      background: #f5f5f5;
+      margin: 20px 0;
+      border: 1px solid #ccc;
+    }
+
+    #reminder-section h3 {
+      color: #ffcd00;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    #reminderList {
+      list-style: none;
+      padding: 0;
+    }
+
+    #reminderList li {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    /* Buttons in the calendar */
+    .button-container-calendar button {
+      cursor: pointer;
+      background: #ffcd00;
+      color: #000;
+      border: 1px solid #ffcd00;
+      border-radius: 4px;
+      padding: 5px 10px;
+      box-shadow: 1px 2px 1px #ccc;
+      font-size: medium;
+    }
+
+    /* Navigation buttons */
+    .button-container-calendar {
+      position: relative;
+      margin-bottom: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      width: 22%;
+      height: 40px;
+      overflow: hidden;
+      clear: both;
+    }
+
+    #previous {
+      float: left;
+    }
+
+    #next {
+      float: right;
+    }
+
+    /* Footer styling */
+    .footer-container-calendar {
+      margin-top: 1em;
+      margin-left: 43%;
+      padding: 10px 0;
+    }
+
+    .footer-container-calendar select {
+      cursor: pointer;
+      background: #ffffff;
+      color: #585858;
+      border: 1px solid #bfc5c5;
+      border-radius: 3px;
+      padding: 5px 1em;
+    }
+  </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Club Name - Contact</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <header>
     <h1>Welcome to the calendar page!</h1>
@@ -22,8 +174,54 @@
     </nav>
   </header>
 
+  <br>
+
+  <div class="calendar-background">
+    <h3 id="monthAndYear"></h3>
+    <div class="button-container-calendar">
+      <button id="previous" onclick="previous()">
+        <b>‹</b>
+      </button>
+      <button id="next" onclick="next()">
+        <b>›</b>
+      </button>
+    </div>
+
+    <table class="table-calendar" id="calendar" data-lang="en">
+      <thead id="thead-month"></thead>
+      <!-- Table body for displaying the calendar -->
+      <tbody id="calendar-body"></tbody>
+    </table>
+
+    <div class="footer-container-calendar">
+      <label for="month">Jump To: </label>
+      <!-- Dropdowns to select a specific month and year -->
+      <select id="month" onchange="jump()">
+        <option value=0>Jan</option>
+        <option value=1>Feb</option>
+        <option value=2>Mar</option>
+        <option value=3>Apr</option>
+        <option value=4>May</option>
+        <option value=5>Jun</option>
+        <option value=6>Jul</option>
+        <option value=7>Aug</option>
+        <option value=8>Sep</option>
+        <option value=9>Oct</option>
+        <option value=10>Nov</option>
+        <option value=11>Dec</option>
+      </select>
+      <!-- Dropdown to select a specific year -->
+      <select id="year" onchange="jump()"></select>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
   <footer>
-    <p>&copy; 2025 Club Name. All rights reserved.</p>
+    <p>&copy; 2025 Wrestling Club. All rights reserved.</p>
   </footer>
+  <script src="./calendar.jsx"></script>
 </body>
+
 </html>
