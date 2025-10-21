@@ -3,11 +3,6 @@
 
 <head>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: white;
-      margin: 0;
-    }
 
     .wrapper {
       max-width: 1100px;
@@ -16,7 +11,6 @@
 
     /* Calendar container */
     .container-calendar {
-      background: #ffffff;
       padding: 15px;
       max-width: 900px;
       margin: 0 auto;
@@ -35,31 +29,36 @@
     .container-calendar #left h1 {
       color: #ffcd00;
       text-align: center;
-      background-color: #f2f2f2;
       margin: 0;
       padding: 10px 0;
     }
 
     /* Calendar table */
+    .calendar-header {
+      color: #111111;
+    }
+
     .table-calendar {
       border-collapse: collapse;
       margin-left: auto;
       margin-right: auto;
       width: 95%;
+      color: #111111;
     }
 
     .table-calendar td,
     .table-calendar th {
       padding: 5px;
-      border: 1px solid #e2e2e2;
+      border: 1px solid #a2a2a2;
       text-align: center;
       vertical-align: top;
+      width: 10%;
     }
 
     /* Date picker */
     .date-picker.selected {
-      background-color: #ffcd00;
       font-weight: bold;
+      color: #111111;
       outline: 1px dashed #ffcd00;
     }
 
@@ -70,7 +69,7 @@
     /* Hover effect for date cells */
     .date-picker:hover {
       background-color: #ffcd00;
-      color: #000;
+      color: #000000;
       cursor: pointer;
     }
 
@@ -139,8 +138,9 @@
     /* Footer styling */
     .footer-container-calendar {
       margin-top: 1em;
-      margin-left: 43%;
+      margin-left: 40%;
       padding: 10px 0;
+      color: #111111;
     }
 
     .footer-container-calendar select {
@@ -177,7 +177,7 @@
   <br>
 
   <div class="calendar-background">
-    <h3 id="monthAndYear"></h3>
+    <h3 id="monthAndYear" class="calendar-header"></h3>
     <div class="button-container-calendar">
       <button id="previous" onclick="previous()">
         <b>‹</b>
