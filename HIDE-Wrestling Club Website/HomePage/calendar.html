@@ -3,7 +3,6 @@
 
 <head>
   <style>
-
     .wrapper {
       max-width: 1100px;
       margin: 15px auto;
@@ -125,6 +124,12 @@
       height: 40px;
       overflow: hidden;
       clear: both;
+      display: flex;
+      align-items: center;
+    }
+
+    .button-container-calendar header {
+      width: 40%
     }
 
     #previous {
@@ -177,11 +182,11 @@
   <br>
 
   <div class="calendar-background">
-    <h3 id="monthAndYear" class="calendar-header"></h3>
     <div class="button-container-calendar">
       <button id="previous" onclick="previous()">
         <b>‹</b>
       </button>
+      <h3 id="monthAndYear" class="calendar-header"></h3>
       <button id="next" onclick="next()">
         <b>›</b>
       </button>
