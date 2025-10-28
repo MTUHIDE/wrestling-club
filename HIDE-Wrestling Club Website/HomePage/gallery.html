@@ -1,14 +1,69 @@
+
 <!DOCTYPE html>
 <html lang="en">
+<script src="gallery.jsx"></script>
+
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Name - Contact</title>
+  <title>Club Name - Gallery</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 550px;
+    }
+
+    * {box-sizing: border-box;}
+    .image-gallery {
+      max-width: 550px;
+      max-height: 650px;
+      position: relative;
+      margin: auto;
+      border: 1px black
+    }
+
+    .slides {
+      display: none;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      font-weight: bold;
+      font-size: 28px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+    }
+
+    .prev {
+      left: 0;
+      margin-left: -70px;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .next {
+      right: 0;
+      margin-right: -70px;
+      border-radius: 3px 0 0 3px;
+    }
+
+  </style>
+
 </head>
+
 <body>
+
   <header>
-    <h1>Welcome to the gallary page!</h1>
+    <h1>Welcome to the gallery page!</h1>
     <h2>Here is where you will find photos from the club.</h2>
     <nav>
       <ul>
@@ -21,8 +76,41 @@
     </nav>
   </header>
 
+  <!--slideshow that holds all of the images-->
+  <div class="image-gallery">
+
+    <div class="slides">
+      <img src="Images/sample1.jpg" style="width:100%">
+    </div>
+
+    <div class="slides">
+      <img src="Images/sample2.jpg" style="width:100%">
+    </div>
+
+    <div class="slides">
+      <img src="Images/sample3.jpg" style="width:100%">
+    </div>
+
+    <div class="slides">
+      <img src="Images/sample4.jpg" style="width:100%">
+    </div>
+
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+      <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+  </div>
+
   <footer>
     <p>&copy; 2025 Club Name. All rights reserved.</p>
   </footer>
+
 </body>
+
 </html>
