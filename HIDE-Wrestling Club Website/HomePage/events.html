@@ -1,44 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Name - Contact</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Welcome to the events page!</h1>
-    <h2>Here is where you will find the event information for the club.</h2>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="calendar.html">Calendar</a></li>
-        <li><a href="fundraising.html">Fundraising</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Name - Events</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .events-container {
+        max-width: 1000px;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
 
-  <main>
-    <h2>Past Events</h2>
-    <p>2023 Invatational</p>
-    <p>2024 State Meet</p>
-    <p>2024 Invatational</p>
-  </main>
+      .event-section {
+        background: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* makes card stand out against background */
+        border-radius: 1em;
+        padding: 1.5rem;
+      }
 
-<main>
-    <h2>Ongoing Events</h2>
-    <p>Club Practices</p>
-    <p>2025 Award Banquet</p>
-</main>
+      .event-section h2 {
+        margin-bottom: 1rem;
+        text-decoration: underline;
+        text-decoration-color: #ffcd00;
+      }
 
+      .event-card {
+        border-left: 5px solid #ffcd00;
+        background: #fdfdfd;
+        padding: 1rem 1.2rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.2s ease; /* helps hover look smooth */
+      }
 
+      .event-card:hover {
+        transform: scale(1.02); /* little zoom on hover */
+      }
 
-  <footer>
-    <p>&copy; 2025 Club Name. All rights reserved.</p>
-  </footer>
-</body>
+      .event-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .event-date {
+        font-size: 0.95rem;
+        color: #666;
+      }
+
+      .event-description {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the events page!</h1>
+      <h2>Here is where you will find the event information for the club.</h2>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="calendar.html">Calendar</a></li>
+          <li><a href="fundraising.html">Fundraising</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="events-container">
+        <section class="event-section">
+          <h2>Upcoming Events</h2>
+
+          <div class="event-card">
+            <p class="event-title">End of Semester Meet (placeholder)</p>
+            <p class="event-date">December 1, 2025</p>
+            <p class="event-description">Some description about the event...</p>
+          </div>
+
+          <div class="event-card">
+            <p class="event-title">Club Party</p>
+            <p class="event-date">December 5, 2025</p>
+            <p class="event-description">Some description about the event...</p>
+          </div>
+        </section>
+
+        <section class="event-section">
+          <h2>Ongoing Events</h2>
+
+          <div class="event-card">
+            <p class="event-title">Club Practices</p>
+            <p class="event-date">Mondays, Wednesdays, Fridays @ 6:00 PM</p>
+            <p class="event-description">Scheduled practices and what not...</p>
+          </div>
+        </section>
+
+        <section class="event-section">
+          <h2>Past Events</h2>
+
+          <div class="event-card">
+            <p class="event-title">2024 State Meet</p>
+            <p class="event-date">March 2024</p>
+            <p class="event-description">Some description or not depending on if we won :)...</p>
+          </div>
+
+          <div class="event-card">
+            <p class="event-title">2023 Invitational</p>
+            <p class="event-date">December 2023</p>
+            <p class="event-description">Some description or not depending on if we won :)...</p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Club Name. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
