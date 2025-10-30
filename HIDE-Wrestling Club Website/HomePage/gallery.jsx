@@ -1,5 +1,10 @@
 
+//sets the default slide to slide 1
 let slidePosition = 1;
+
+window.onload = function() {
+    showSlides(slidePosition);
+}
 
 //move to the next image
 function plusSlides(x) {

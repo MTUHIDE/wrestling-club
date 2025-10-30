@@ -12,30 +12,25 @@
 
   <style>
 
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 550px;
+    .spacer {
+      height: 81px;
     }
 
-    * {box-sizing: border-box;}
     .image-gallery {
+      height: 550px;
+      display: flex;
+      align-items: center;
       max-width: 550px;
-      max-height: 650px;
+      max-height: 450px;
       position: relative;
       margin: auto;
-      border: 1px black
-    }
-
-    .slides {
-      display: none;
+      /* background-color: black; */
     }
 
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      top: 50%;
+      top: 45%;
       width: auto;
       padding: 16px;
       font-weight: bold;
@@ -46,13 +41,13 @@
 
     .prev {
       left: 0;
-      margin-left: -70px;
+      margin-left: -200px;
       border-radius: 3px 0 0 3px;
     }
 
     .next {
       right: 0;
-      margin-right: -70px;
+      margin-right: -200px;
       border-radius: 3px 0 0 3px;
     }
 
@@ -75,6 +70,8 @@
       </ul>
     </nav>
   </header>
+
+  <div class="spacer"></div>
 
   <!--slideshow that holds all of the images-->
   <div class="image-gallery">
@@ -106,6 +103,8 @@
     </div>
 
   </div>
+
+  <div class="spacer"></div>
 
   <footer>
     <p>&copy; 2025 Club Name. All rights reserved.</p>
