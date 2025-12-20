@@ -133,13 +133,16 @@ function showCalendar(month, year) {
 	for (let i = 0; i < 6; i++) {
 		let row = document.createElement("tr");
 		for (let j = 0; j < 7; j++) {
+			// For the first row, check when the first day is
 			if (i === 0 && j < firstDay) {
 				cell = document.createElement("td");
 				cellText = document.createTextNode("");
 				cell.appendChild(cellText);
 				row.appendChild(cell);
+			// If the date exceeds the number of days in the month, break	
 			} else if (date > daysInMonth(month, year)) {
 				break;
+			// Create cells for each date (typical case)
 			} else {
 				cell = document.createElement("td");
 				cell.setAttribute("data-date", date);
@@ -149,6 +152,7 @@ function showCalendar(month, year) {
 				cell.className = "date-picker";
 				cell.innerHTML = "<span>" + date + "</span";
 
+				// Highlight today's date
 				if (
 					date === today.getDate() &&
 					year === today.getFullYear() &&
